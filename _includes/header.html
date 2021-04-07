@@ -1,0 +1,59 @@
+
+
+{%- if include.data.topbar -%}
+	<div id="topbar" class="d-flex align-items-center fixed-top topbar-transparent">
+		<div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start gap-5">
+		{%- for item in include.data.topbar -%}
+			{%- for key in item -%}{%- assign icon = key[0] -%}{%- assign text = key[1] -%}{%- endfor -%}
+			<span class="d-flex align-items-center"><i class="bi bi-{{ icon }}"></i>{{ text }}</span>
+		{%- endfor -%}
+		<!-- <i class="bi bi-phone d-flex align-items-center"><span>{ { site.data.user.mobile }}</span></i>
+		<i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>{ { site.data.user.openingHours }}</span></i> -->
+		</div>
+	</div>
+{%- else -%}
+<style>:root { --topbar-height: 0 }</style>
+{%- endif -%}
+
+
+{%- assign mode = include.data.mode | default: 'fixed-top' -%}
+
+<header id="header" class="{{ mode }} d-flex align-items-center header-transparent {% if mode != 'sticky-top' %}header-scrolled{%- endif -%}"
+		{%- if include.data.offset -%}style="--offset: {{ include.data.offset }}"{%- endif -%}>
+	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+	<div class="logo">
+		<h1><a href="index.html">{{ site.title }}</a></h1>
+		<!-- Uncomment below if you prefer to use an image logo -->
+		<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+	</div>
+
+	<nav id="navbar" class="navbar order-last order-lg-0">
+		<!-- { **% include nav.html item-class="nav-link scrollto" nav=site.data.main-menu -%} -->
+		<ul>
+		{%- for menu in site.data.main-menu -%}
+			<!-- <li>{ { menu | markdownify }}</li> -->
+			{%- if menu.subnav -%}
+				<li class="dropdown"><a href="{{ menu.url }}"><span>{{ menu.label }}</span> <i class="bi bi-chevron-down"></i></a>
+					<ul>
+						{%- for menu in menu.subnav -%}
+							<li><a class="nav-link scrollto {{ menu.class }} {%- if menu.url == page.url -%}active{%- endif -%}" href="{{ menu.url }}">{{ menu.label }}</a></li>	
+						{%- endfor -%}
+					</ul>
+				</li>
+			{%- else -%}
+				<li><a class="nav-link scrollto {{ menu.class }}{%- if menu.url == page.url -%}active{%- endif -%}" href="{{ menu.url }}">{{ menu.label }}</a></li>
+			{%- endif -%}
+		{%- endfor -%}
+		
+		</ul>
+		<i class="bi bi-list mobile-nav-toggle"></i>
+	</nav>
+
+	<!-- <a href="#book-a-table" class="book-a-table-btn scrollto">Book a table</a> -->
+	{%- if include.call-to-action -%}
+	{%- include mailto label='Contact' mail=include.form.mailto subject='devis' class='book-a-table-btn' -%}
+	{%- endif -%}
+
+	</div>
+</header>

@@ -1,0 +1,2 @@
+{% assign mail = include.mail | default: site.user.email | default: site.email %}
+<a href="mailto:{{include.mail}}?{% if include.subject %}subject={{include.subject}}&{%endif%}{% if include.cc %}cc={{include.cc}}&{%endif%}" role="button" class="mailto {{include.class}}">{{include.label|default: include.mail}}</a>

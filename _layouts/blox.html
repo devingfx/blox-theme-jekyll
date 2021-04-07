@@ -1,0 +1,45 @@
+---
+layout: base
+---
+
+
+
+{%- unless page.header == false -%}
+	{%- include header.html data=page.header -%}
+{%- endunless -%}
+
+<main id="main" class="page-content" aria-label="Content">
+	{%- for key in page -%}
+		{%- if key[0] == 'title' or key[0] == 'content' or key[0] == 'header' or key[0] == 'footer' or key[0] == 'layout' or key[0] == 'dir' or key[0] == 'name' or key[0] == 'path' or key[0] == 'url' -%}
+			{%- continue -%}
+		<!-- { %- elsif key[0] == 'content' -%} marche pas -->
+			<!-- { { page.content | markdownify }} -->
+			<!-- { { content | markdownify }} -->
+		{%- else -%}
+			{%- assign name = key[0] -%}
+			{%- assign blox = key[1] -%}
+			{%- for key in blox -%}
+				{%- assign type = key[0] -%}
+				{%- assign data = key[1] -%}
+			{%- endfor -%}
+			<!-- { %- capture path -%}_includes/{ {type}}{ %- endcapture -%} -->
+			<!-- <pre>
+				name = { { name }}
+				type = { { type }}
+				data = { { data }}
+				<!-- { % if fileExists=="true" %}
+					exists
+				{ % else %}
+					dont exists
+				{ % endif %} - ->
+			</pre> -->
+			{% include {{ type }} name=name data=data %}
+			<!-- { % include {{ type }} name={{ name }} data=data %} -->
+			<!-- { % include {{ file }} data=data %} -->
+		{%- endif -%}
+	{%- endfor -%}
+</main>
+
+{%- unless page.footer == false -%}
+	{%- include footer.html -%}
+{%- endunless -%}
