@@ -222,3 +222,12 @@ on`load`( e=>
 	window.location.hash
 		&& scrollto( window.location.hash )
 , window )
+
+
+
+/**
+ * lightbox for gallery
+ */
+const galleryLightbox = GLightbox({
+	selector: '.gallery-lightbox'
+})
