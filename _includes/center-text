@@ -1,0 +1,17 @@
+
+{%- assign slide = include.data -%}
+
+<section id="{{name}}" class="center-text {{name}}">
+	<div class="content"
+	{% if slide.image %} data-body-bg="{{ slide.image }}"{% endif %}>
+		<h2 class="animate__animated animate__fadeInDown">{{ slide.title | markdownify }}</h2>
+		{% for txt in slide.texts %}
+			<p class="animate__animated animate__fadeInUp">{{ txt }}</p>
+		{% endfor %}
+		<div>
+			{% for action in slide.actions %}
+				<a href="{{ action.url }}" class="btn-book animate__animated animate__fadeInUp scrollto">{{ action.label }}</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>
