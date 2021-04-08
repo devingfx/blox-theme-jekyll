@@ -1,0 +1,50 @@
+
+<section id="{{name}}" class="columns {{name}}">
+	<div class="container-fluid">
+
+		<div class="row">
+		
+			{% for col in include.data %}
+			
+				{%- assign content = false -%}
+				{%- assign image = false -%}
+				{%- assign position = false -%}
+		
+				{%- if col.content -%}
+				
+					{%- assign subject = site.subjects | where: "relative_path", col.content | first -%}
+					
+					{%- if subject -%}
+						{%- assign content = subject.content -%}
+						{%- assign image = subject.image -%}
+						{%- assign position = subject.image-position -%}
+					{%- else -%}
+						{%- assign content = col.content | markdownify -%}
+					{%- endif -%}
+					
+				{%- endif -%}
+				
+			<div class="col-lg-{{ col.size | default: 12 }} {% if col.offset %} offset-lg-{{ col.offset }}{% endif %}
+						d-flex flex-column justify-content-center align-items-stretch {{col.class}}"
+				 {%- if col.background -%}
+				 	style="background-image: url('{{ col.background }}');"
+				 {%- endif -%}
+				 {%- if image -%}
+				 	data-body-bg="{{ image }}"
+					{% if position %}
+				 	data-body-bg-position="{{ position }}"
+				 	{%- endif -%}
+				 {%- endif -%}>
+				  
+				{%- if content -%}
+					{{ content }}
+				{%- endif -%}
+				
+			</div>
+			
+			{% endfor %}
+			
+		</div>
+
+	</div>
+</section>
