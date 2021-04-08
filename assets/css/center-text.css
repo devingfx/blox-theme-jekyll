@@ -43,7 +43,7 @@ section.center-text h2 {
 }
 
 section.center-text .content h2 > p {
-    font-size: 40px;
+    font-size: 48px;
 }
 
 section.center-text h2 strong {
@@ -84,10 +84,16 @@ section.center-text .btn:hover {
   section.center-text h2 {
     font-size: 28px;
   }
+  section.center-text .content h2 > p {
+    font-size: 28px;
+  }
 }
 
 @media (min-width: 1024px) {
   section.center-text p {
     width: 50%;
+  }
+  section.center-text .content h2 > p {
+    width: initial;
   }
 }
