@@ -1,0 +1,108 @@
+    <section id="contact" class="contact">
+      <div class="container">
+
+        <div class="section-title">
+          <h2><span>Contactez</span> moi</h2>
+          <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
+        </div>
+      </div>
+      
+	  {% if include.data.map %}
+      <div class="map">
+		<iframe style="border:0; width: 100%; height: 350px;" src="{{ include.data.map }}" 
+		frameborder="0" allowfullscreen loading="lazy"></iframe>
+      </div>
+      {% endif %}
+
+      <div class="container mt-5">
+
+        <div class="row info-wrap">
+		    {%- for area in site.data.user.coverAreas -%}
+              <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+                <i class="bi bi-geo-alt"></i>
+                <h4>{{ area.name }}:</h4>
+				{%- for city in area.cities -%}
+                  {{ city | markdownify }}
+		    	{%- endfor -%}
+              </div>
+		    {%- endfor -%}
+
+            <!-- <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-clock"></i>
+              <h4>Horaires:</h4>
+              <p>Du lundi au vendredi:<br>De 9H00 à 19H00</p>
+            </div> -->
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-envelope"></i>
+              <h4>Email:</h4>
+			  {% for mail in site.data.user.contact.email %}
+                 {% include mailto mail=mail subject='devis' %}
+			  {% endfor %}
+            </div>
+
+            <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
+              <i class="bi bi-phone"></i>
+              <h4>Téléphone:</h4>
+			  {% for phone in site.data.user.contact.phone %}
+              	<a href="tel:{{phone}}">{{phone}}</a>
+			  {% endfor %}
+            </div>
+
+        </div>
+		
+		{% if include.data.form %}
+		
+			{% if include.data.form.external %}
+				<form role="form" class="form" style="
+					height: 1218px;
+					overflow: hidden;
+				">
+					<iframe src="{{include.data.form.external}}" 
+							width="100%" height="1500" frameborder="0" marginheight="0" marginwidth="0">Chargement…</iframe>
+				</form>
+			{% endif %}
+			
+			<!-- { % include mailto label='Contact' mail=include.data.form.mailto subject='devis' class='book-a-table-btn' %} -->
+			
+			{% if include.data.form.post %}
+				<form action="{{include.data.form.post.url}}" method="post" role="form" class="row form post">
+			{% endif %}
+			{% if include.data.form.mailto %}
+				<form action="mailto:{{include.data.form.mailto}}" role="form" class="row form mailto"
+					  onchange="this.action = this.action.split('?')[0] + '?' + Array.from(this.elements).filter(el=>el.name&&el.value).map(el=>el.name+'='+encodeURIComponent(el.value)).join('&')">
+			{% endif %}
+			
+			{% if include.data.form.post or include.data.form.mailto %}		
+					<div class="col-md-6 form-group">
+						<input name="body" type="text" class="form-control" id="name" placeholder="Your Name" required>
+					</div>
+					<div class="col-md-6 form-group mt-3 mt-md-0">
+						<input name="cc" type="email" class="form-control" id="email" placeholder="Your Email" required>
+					</div>
+					
+					<div class="form-group mt-3">
+						<input name="subject" type="text" list="usual-subjects" class="form-control" id="subject" placeholder="Subject" required>
+						<datalist id="usual-subjects">
+							<option>Devis pour un accord</option>
+							<option>Devis pour un restauration</option>
+							<option>J'ai piano à donner</option>
+							<option>Poser une question</option>
+						</datalist>
+					</div>
+					<div class="form-group mt-3">
+						<textarea name="body" class="form-control" rows="5" placeholder="Message" required></textarea>
+					</div>
+					<div class="my-3">
+						<div class="loading">Loading</div>
+						<div class="error-message"></div>
+						<div class="sent-message">Your message has been sent. Thank you!</div>
+					</div>
+					<div class="text-center"><button type="submit">Send Message</button></div>
+				</form>
+			{% endif %}
+			
+      	{% endif %}
+
+      </div>
+    </section>
