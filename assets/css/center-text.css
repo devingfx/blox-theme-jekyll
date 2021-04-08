@@ -3,24 +3,25 @@
 # center-text Section
 --------------------------------------------------------------*/
 section.center-text {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--hero-bg-color);
-  overflow: hidden;
-  padding: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: var(--hero-bg-color);
+	overflow: hidden;
+	padding: 0;
 }
 
 section.center-text .content {
-  width: 100%;
-  height: 100vh;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-shadow: 0 2px 2px black, 0 2px 6px rgba(0,0,0,0.5);
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	text-shadow: 0 2px 2px black, 0 2px 6px rgba(0,0,0,0.5);
 }
 
 section.center-text.fx-layer .content::before {
@@ -39,6 +40,10 @@ section.center-text h2 {
   margin-bottom: 30px;
   font-size: 48px;
   font-weight: 700;
+}
+
+section.center-text .content h2 > p {
+    font-size: 40px;
 }
 
 section.center-text h2 strong {
