@@ -67,7 +67,7 @@
   padding: 10px 20px;
   font-size: 14px;
   font-weight: 400;
-  color: var(--7-color);
+  color: var(--c7-color);
 }
 
 .navbar .dropdown ul a i {
@@ -162,7 +162,7 @@
 .navbar-mobile a {
   padding: 10px 20px;
   font-size: 15px;
-  color: var(--7-color);
+  color: var(--c7-color);
 }
 
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {

@@ -3,7 +3,7 @@
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: var(--27-color);
+  background: var(--c27-color);
   color: var(--white-color);
   font-size: 14px;
   text-align: center;
@@ -33,7 +33,7 @@
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: var(--28-color);
+  background: var(--c28-color);
   color: var(--white-color);
   line-height: 1;
   padding: 8px 0;
@@ -58,6 +58,6 @@
 }
 
 .credits, .credits a, .credits a:hover {
-    color: var(--27-color);
+    color: var(--c27-color);
 }
 

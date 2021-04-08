@@ -44,19 +44,19 @@
   --white-color:  #ffffff;
 
 
-  --27-color: #35322d;
-  --28-color: #46423b;
-  --7-color:  #433f39;
-  --8-color:  #5f5950;
-  --24-color: #7a7368;
-  --14-color: #6c665c;
-  --18-color: #948c81;
-  --10-color: #6c757d;
-  --16-color: #dad8d4;
-  --19-color: #e8e7e4;
-  --9-color:  #f2f1ef;
-  --11-color: #fffaf3;
-  --26-color: #fff6e8;
+  --c27-color: #35322d;
+  --c28-color: #46423b;
+  --c7-color:  #433f39;
+  --c8-color:  #5f5950;
+  --c24-color: #7a7368;
+  --c14-color: #6c665c;
+  --c18-color: #948c81;
+  --c10-color: #6c757d;
+  --c16-color: #dad8d4;
+  --c19-color: #e8e7e4;
+  --c9-color:  #f2f1ef;
+  --c11-color: #fffaf3;
+  --c26-color: #fff6e8;
 
 
   --ko-color: #ed3c0d;
@@ -82,7 +82,7 @@
   --grey-e-color: #111;
 /*   --white-color: var(--black-color); */
 
-  --8-color: #fff;
+  --c8-color: #fff;
   --grey-8-color: #e8e7e4;
   --grey-4-c:olor: #f00;
 }
