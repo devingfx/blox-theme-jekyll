@@ -1,0 +1,103 @@
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header,
+#header .logo,
+#header .navbar { transition: all 1s }
+
+#header {
+  top: var(--topbar-height, 0);
+  height: 70px;
+  z-index: 997;
+  transition: all 0.5s;
+  padding: 10px 0;
+  background: var(--header-color);
+}
+#header.sticky-top > .container-fluid {
+  flex-wrap: wrap;
+}
+#header.sticky-top .logo {
+    flex: 0 0 100%;
+    height: 0;
+	opacity: 0;
+    transform: translate(100px, -100px);
+	pointer-events: none;
+}
+#header.sticky-top .navbar {
+    width: 485px;
+    margin: auto;
+    place-content: flex-end;
+}
+#header.sticky-top.header-stuck .logo {
+    opacity: 1;
+	transform: translate(0px, 5px);
+	pointer-events: all;
+}
+#header.sticky-top.header-stuck .navbar {
+    width: 100%;
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+.scrolled #header {
+  top: 0;
+  background: var(--header-color);
+}
+
+#header.sticky-top {
+    --offset: 500px;
+    margin-top: var(--offset);
+    margin-bottom: calc(calc(-1 * var(--offset)) - 70px);
+    /* top: 130px; */
+}
+
+#header .logo h1 {
+  font-size: 28px;
+  margin: 0;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: 3px;
+}
+
+#header .logo h1 a, #header .logo h1 a:hover {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+#header .logo img {
+  padding: 0;
+  margin: 0;
+  max-height: 40px;
+}
+
+/*--------------------------------------------------------------
+# Call to action button Menu
+--------------------------------------------------------------*/
+#header .call-to-action {
+  background: var(--accent-color);
+  color: var(--white-color);
+  border-radius: 50px;
+  margin: 0 0 0 20px;
+  padding: 10px 25px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+#header .call-to-action:hover {
+  background: var(--accent-color-deeper);
+  color: var(--white-color);
+}
+
+@media (max-width: 992px) {
+  #header .call-to-action {
+    margin: 0 15px 0 0;
+    padding: 8px 20px;
+    letter-spacing: 1px;
+  }
+}

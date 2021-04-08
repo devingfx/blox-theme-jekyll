@@ -1,0 +1,33 @@
+
+/*--------------------------------------------------------------
+# Top Bar
+--------------------------------------------------------------*/
+#topbar {
+  padding: 0;
+  font-size: 15px;
+  height: var(--topbar-height);
+  transition: all 0.5s;
+  background: rgba(26, 24, 22, 0.8);
+  z-index: 996;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+#topbar.transparent {
+  background: transparent;
+}
+
+.scrolled #topbar {
+  top: -50px;
+}
+
+#topbar i {
+  color: var(--accent-color);
+  line-height: 0;
+  padding-right: 5px;
+}
+
+#topbar span {
+  color: var(--white-color);
+  font-style: normal;
+  padding: 5px;
+}
