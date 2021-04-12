@@ -13,6 +13,21 @@ section .content {
   background: var(--header-color);
   padding: 40px 80px;
 }
+section .content .h1,
+section .content .h2,
+section .content .h3,
+section .content .h4,
+section .content .h5,
+section .content .h6,
+section .content h1,
+section .content h2,
+section .content h3,
+section .content h4,
+section .content h5,
+section .content h6 
+{
+    margin-bottom: 1.5rem;
+}
 
 .section-bg {
   background-color: var(--white-color);
@@ -27,7 +42,7 @@ section .content {
   margin: 15px 0 0 0;
   font-size: 32px;
   font-weight: 700;
-  color: var(--8-color);
+  color: var(--c8-color);
 }
 
 .section-title h2 strong {
@@ -51,7 +66,7 @@ section .content {
 section .content h3 {
   font-weight: 400;
   font-size: 34px;
-  color: var(--8-color);
+  color: var(--c8-color);
 }
 
 section .content h4 {

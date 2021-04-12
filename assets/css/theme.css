@@ -86,7 +86,7 @@
   --grey-8-color: #e8e7e4;
   --grey-4-c:olor: #f00;
 }
-.theme-dark .about,
+.theme-dark .content,
 .theme-dark .section-title {
   text-shadow: 0 2px 2px black, 0 2px 6px rgba(0,0,0,0.5);
 }
