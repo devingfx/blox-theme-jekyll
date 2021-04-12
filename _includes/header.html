@@ -17,16 +17,30 @@
 
 
 {%- assign mode = include.data.mode | default: 'fixed-top' -%}
+{%- assign logo = include.data.logo | default: site.data.theme.logo -%}
 
 <header id="header" class="{{ mode }} d-flex align-items-center header-transparent {% if mode != 'sticky-top' %}header-scrolled{%- endif -%}"
 		{%- if include.data.offset -%}style="--offset: {{ include.data.offset }}"{%- endif -%}>
 	<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-	<div class="logo">
-		<h1><a href="index.html">{{ site.title }}</a></h1>
-		<!-- Uncomment below if you prefer to use an image logo -->
-		<!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-	</div>
+	{%- if logo -%}
+		<div class="logo">
+			<h1>
+				<a href="{{ logo.url | default: 'index.html' }}">
+					{%- if logo.text -%}
+						{{ logo.text | default: site.title }}
+					{%- endif -%}
+					{%- if logo.image -%}
+						<img src="assets/img/logo.png" alt="" class="img-fluid">
+					{%- endif -%}
+				</a>
+			</h1>
+		</div>
+	{%- else -%}
+		<div class="logo">
+			<h1><a href="index.html">{{ site.title }}</a></h1>
+		</div>
+	{%- endif -%}
 
 	<nav id="navbar" class="navbar order-last order-lg-0">
 		<!-- { **% include nav.html item-class="nav-link scrollto" nav=site.data.main-menu -%} -->
