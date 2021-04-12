@@ -6,29 +6,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
 
 
-:root, .theme-light, .theme-light * {
+:root, .theme-light {
   --readable-font: "Fira Sans";
   --fantasy-font: "Dosis";
   /* --logo-font: "Indie Flower"; */
   --speach-font: "Comic Neue";
 
+	
+  --accent-color:         #ffb03b;
+  --accent-color-h:       36;
+  --accent-color-s:       100%;
+  --accent-color-l:       62%;
+  --accent-color-hs:      var(--accent-color-h), var(--accent-color-s);
+  --accent-color-sl:      var(--accent-color-s), var(--accent-color-l);
+  --accent-color-hsl:     var(--accent-color-h), var(--accent-color-s), var(--accent-color-l);
+  --accent-color:         hsl(var(--accent-color-hsl));
+  --accent-color-cpl:     hsl(calc(var(--accent-color-h) + 180),var(--accent-color-sl));
+  
+  --accent-color-L95:       hsl(var(--accent-color-h), var(--accent-color-s), 95% );
 
   --accent-color-deeper:  #ff9b08;
-  --accent-color:         #ffb03b;
   --accent-color-lighter: #ffc56e;
   
 /*   --accent-color-deeper:  #99 24f4;
   --accent-color:         #9d 4edb;
   --accent-color-lighter: #bb 6ff7; */
 
+  --solid-color: rgba(26, 24, 22, 0.8);
 
   --topbar-height: 50px;
-  --topbar-color: rgba(26, 24, 22, 0.8);
+  --topbar-color: var(--solid-color);
   --topbar-text-color: rgba(255, 255, 255, 0.7);
   --header-color: rgba(26, 24, 22, 0.85);
   --header-effect: none;
   
   --hero-bg-color: rgba(39, 37, 34, 0.8);
+
+  --card-color: var(--white-color);
+
+  --footer-color: #35322d;
 
   --black-color:  #000000;
   --grey-1-color: #111111;
@@ -48,12 +64,15 @@
   --grey-e-color: #eeeeee;
   --white-color:  #ffffff;
 
+  --ko-color: #ed3c0d;
+  --ok-color: #18d26e;
 
-  --c27-color: #35322d;
+
   --c28-color: #46423b;
-  --c7-color:  #433f39;
+  --link-color:  #433f39;
+  --c7-color:  var(--link-color);
   --c8-color:  #5f5950;
-  --c24-color: #7a7368;
+  /* --c24-color: #7a7368; */
   --c14-color: #6c665c;
   --c18-color: #948c81;
   --c10-color: #6c757d;
@@ -61,14 +80,10 @@
   --c19-color: #e8e7e4;
   --c9-color:  #f2f1ef;
   --c11-color: #fffaf3;
-  --c26-color: #fff6e8;
+  /* --c26-color: #fff6e8; */
 
-
-  --ko-color: #ed3c0d;
-  --ok-color: #18d26e;
 }
-.theme-dark,
-.theme-dark * {
+.theme-dark {
   
 /*   --black-color: var(--white-color); */
   --grey-1-color: #eee;
@@ -86,6 +101,8 @@
   --grey-d-color: #222;
   --grey-e-color: #111;
 /*   --white-color: var(--black-color); */
+
+  --card-color: var(--solid-color);
 
   --c8-color: #fff;
   --grey-8-color: #e8e7e4;

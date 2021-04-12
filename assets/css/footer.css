@@ -3,7 +3,7 @@
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: var(--c27-color);
+  background: var(--footer-color);
   color: var(--white-color);
   font-size: 14px;
   text-align: center;
@@ -57,7 +57,5 @@
   font-size: 13px;
 }
 
-.credits, .credits a, .credits a:hover {
-    color: var(--c27-color);
-}
+/* .credits, .credits a, .credits a:hover {} */
 
