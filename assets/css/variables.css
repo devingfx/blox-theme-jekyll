@@ -12,7 +12,6 @@
   /* --logo-font: "Indie Flower"; */
   --speach-font: "Comic Neue";
 
-  --topbar-height: 50px;
 
   --accent-color-deeper:  #ff9b08;
   --accent-color:         #ffb03b;
@@ -23,6 +22,7 @@
   --accent-color-lighter: #bb 6ff7; */
 
 
+  --topbar-height: 50px;
   --topbar-color: rgba(26, 24, 22, 0.8);
   --topbar-text-color: rgba(255, 255, 255, 0.7);
   --header-color: rgba(26, 24, 22, 0.85);
