@@ -45,6 +45,7 @@
 .scrolled #header {
   top: 0;
   background: var(--header-color);
+  backdrop-filter: var(--header-effect);
 }
 
 #header.sticky-top {

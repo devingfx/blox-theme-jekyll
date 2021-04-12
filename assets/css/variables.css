@@ -24,6 +24,7 @@
 
   --hero-bg-color: rgba(39, 37, 34, 0.8);
   --header-color: rgba(26, 24, 22, 0.85);
+  --header-effect: blur(5px);
 
   --black-color:  #000000;
   --grey-1-color: #111111;
