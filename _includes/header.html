@@ -31,7 +31,7 @@
 						{{ logo.text | default: site.title }}
 					{%- endif -%}
 					{%- if logo.image -%}
-						<img src="assets/img/logo.png" alt="" class="img-fluid">
+						<img src="{{ logo.image | default: 'assets/img/logo.png' }}" alt="" class="img-fluid">
 					{%- endif -%}
 				</a>
 			</h1>
