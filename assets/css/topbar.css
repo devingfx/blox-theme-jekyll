@@ -7,9 +7,9 @@
   font-size: 15px;
   height: var(--topbar-height);
   transition: all 0.5s;
-  background: rgba(26, 24, 22, 0.8);
+  background: var(--topbar-color);
   z-index: 996;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--topbar-text-color);
 }
 
 #topbar.transparent {

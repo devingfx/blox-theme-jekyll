@@ -22,9 +22,13 @@
   --accent-color:         #9d 4edb;
   --accent-color-lighter: #bb 6ff7; */
 
-  --hero-bg-color: rgba(39, 37, 34, 0.8);
+
+  --topbar-color: rgba(26, 24, 22, 0.8);
+  --topbar-text-color: rgba(255, 255, 255, 0.7);
   --header-color: rgba(26, 24, 22, 0.85);
   --header-effect: none;
+  
+  --hero-bg-color: rgba(39, 37, 34, 0.8);
 
   --black-color:  #000000;
   --grey-1-color: #111111;
