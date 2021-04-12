@@ -25,16 +25,20 @@
 
 	{%- if logo -%}
 		<div class="logo">
-			<h1>
-				<a href="{{ logo.url | default: 'index.html' }}">
-					{%- if logo.text -%}
-						{{ logo.text | default: site.title | markdownify }}
-					{%- endif -%}
-					{%- if logo.image -%}
-						<img src="{{ logo.image | default: 'assets/img/logo.png' }}" alt="" class="img-fluid">
-					{%- endif -%}
-				</a>
-			</h1>
+			{%- if logo.md -%}
+				{{ logo.md | markdownify }}
+			{%- else -%}
+				<h1>
+					<a href="{{ logo.url | default: 'index.html' }}">
+						{%- if logo.text -%}
+							{{ logo.text | default: site.title | append: '{: .mb-0}' | markdownify }}
+						{%- endif -%}
+						{%- if logo.image -%}
+							<img src="{{ logo.image | default: 'assets/img/logo.png' }}" alt="" class="img-fluid">
+						{%- endif -%}
+					</a>
+				</h1>
+			{%- endif -%}
 		</div>
 	{%- else -%}
 		<div class="logo">
