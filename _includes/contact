@@ -2,7 +2,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2><span>Contactez</span> moi</h2>
+          <h2><strong>Contactez</strong> moi</h2>
           <p>Ut possimus qui ut temporibus culpa velit eveniet modi omnis est adipisci expedita at voluptas atque vitae autem.</p>
         </div>
       </div>
@@ -16,7 +16,7 @@
 
       <div class="container mt-5">
 
-        <div class="row info-wrap">
+        <div class="row solid info-wrap">
 		    {%- for area in site.data.user.coverAreas -%}
               <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
                 <i class="bi bi-geo-alt"></i>
@@ -66,10 +66,10 @@
 			<!-- { % include mailto label='Contact' mail=include.data.form.mailto subject='devis' class='book-a-table-btn' %} -->
 			
 			{% if include.data.form.post %}
-				<form action="{{include.data.form.post.url}}" method="post" role="form" class="row form post">
+				<form action="{{include.data.form.post.url}}" method="post" role="form" class="row solid form post">
 			{% endif %}
 			{% if include.data.form.mailto %}
-				<form action="mailto:{{include.data.form.mailto}}" role="form" class="row form mailto"
+				<form action="mailto:{{include.data.form.mailto}}" role="form" class="row solid form mailto"
 					  onchange="this.action = this.action.split('?')[0] + '?' + Array.from(this.elements).filter(el=>el.name&&el.value).map(el=>el.name+'='+encodeURIComponent(el.value)).join('&')">
 			{% endif %}
 			

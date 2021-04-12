@@ -1,42 +1,42 @@
 
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-.contact .info-wrap {
+
+/* .contact .info-wrap {
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding: 30px;
 }
 .theme-dark .contact .info-wrap {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
     background: white;
-    margin: 1em 1em 0 1em;
-}
+} */
 
-.contact .info {
-  background: var(--white-color);
-}
+/* .contact .info { */
+  /* background: var(--white-color); */
+/* } */
 
 .contact .info i {
-  font-size: 20px;
-  color: var(--accent-color);
-  float: left;
-  width: 44px;
-  height: 44px;
-  background: var(--c26-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  transition: all 0.3s ease-in-out;
+	font-size: 20px;
+	color: var(--accent-color);
+	background: hsla(var(--accent-color-hsl), 0.1);
+	float: left;
+	width: 44px;
+	height: 44px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50px;
+	transition: all 0.3s ease-in-out;
 }
+/* .theme-light .contact .info i { */
+	/* color: var(--accent-color); */
+/* } */
 
 .contact .info h4 {
   padding: 0 0 0 60px;
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 5px;
-  color: var(--c7-color);
-  font-family: var(--readable-font), sans-serif;
+  /* color: var(--link-color); */
+  /* font-family: var(--readable-font), sans-serif; */
 }
 
 .contact .info p,.contact .info a {
@@ -44,7 +44,7 @@
   padding: 0 0 0 60px;
   margin-bottom: 0;
   font-size: 14px;
-  color: var(--c24-color);
+  color: var(--link-color);
 }
 
 .contact .info:hover i {
@@ -53,13 +53,13 @@
 }
 
 .contact .form {
-  width: 100%;
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+  /* width: 100%; */
+  /* box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12); */
   padding: 30px;
-  background: var(--white-color);
+  /* background: var(--white-color); */
 }
 .theme-dark .contact .form {
-  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.3);
+  /* box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.3); */
 }
 
 .contact .form .form-group {
