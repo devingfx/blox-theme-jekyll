@@ -1,17 +1,14 @@
 
-/*--------------------------------------------------------------
-# Sections General
---------------------------------------------------------------*/
 section {
-  padding: 60px 0;
-  margin: 500px 0;
-  background: transparent;
+	padding: 60px 0;
+	margin: 500px 0;
+	background: transparent;
 }
-section#hero { margin: 0 }
+section.hero { margin: 0 }
 
 section .content {
-  background: var(--header-color);
-  padding: 40px 80px;
+	background: var(--header-color);
+	padding: 40px 80px;
 }
 section .content .h1,
 section .content .h2,
@@ -26,32 +23,39 @@ section .content h4,
 section .content h5,
 section .content h6 
 {
-    margin-bottom: 1.5rem;
+	margin-bottom: 1.5rem;
 }
 
-.section-bg {
-  background-color: var(--white-color);
+.solid,
+.theme-light .solid {
+	background-color: var(--card-color);
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+	padding: 30px;
 }
+.theme-dark .solid {
+	box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
 
 .section-title {
-  text-align: center;
-  padding-bottom: 30px;
+	text-align: center;
+	padding-bottom: 30px;
 }
 
 .section-title h2 {
-  margin: 15px 0 0 0;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--c8-color);
+	margin: 15px 0 0 0;
+	font-size: 32px;
+	font-weight: 700;
+	color: var(--c8-color);
 }
 
 .section-title h2 strong {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .section-title p {
-  margin: 15px auto 0 auto;
-  font-weight: 300;
+	margin: 15px auto 0 auto;
+	font-weight: 300;
 }
 
 @media (min-width: 1024px) {
