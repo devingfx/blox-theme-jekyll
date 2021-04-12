@@ -59,74 +59,74 @@ section .content h6
 }
 
 @media (min-width: 1024px) {
-  .section-title p {
-    width: 50%;
-  }
+	.section-title p {
+		width: 50%;
+	}
 }
 
 
 
 
 section .content h3 {
-  font-weight: 400;
-  font-size: 34px;
-  color: var(--c8-color);
+	font-weight: 400;
+	font-size: 34px;
+	color: var(--c8-color);
 }
 
 section .content h4 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-top: 5px;
+	font-size: 20px;
+	font-weight: 700;
+	margin-top: 5px;
 }
 
 section .content p {
-  font-size: 15px;
-  color: var(--grey-8-color);
+	font-size: 15px;
+	color: var(--grey-8-color);
 }
 
 section .content ul {
-  list-style: none;
-  padding: 0;
+	list-style: none;
+	padding: 0;
 }
 
 section .content ul li + li {
-  margin-top: 15px;
+	margin-top: 15px;
 }
 
 section .content ul li {
-  position: relative;
-  padding-left: 26px;
+	position: relative;
+	padding-left: 26px;
 }
 
 section .content ul i {
-  font-size: 20px;
-  color: var(--accent-color);
-  position: absolute;
-  left: 0;
-  top: 2px;
+	font-size: 20px;
+	color: var(--accent-color);
+	position: absolute;
+	left: 0;
+	top: 2px;
 }
 
 section .content p:last-child {
-  margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 
 @media (max-width: 1024px) {
-  section .content, section .accordion-list {
-    padding-left: 2em;
-    padding-right: 2em;
-  }
+	section .content, section .accordion-list {
+		padding-left: 2em;
+		padding-right: 2em;
+	}
 }
 
 @media (max-width: 992px) {
-  section .content, section .accordion-list {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-  section .content {
-    padding-top: 30px;
-  }
-  section .accordion-list {
-    padding-bottom: 30px;
-  }
+	section .content, section .accordion-list {
+		padding-left: 1em;
+		padding-right: 1em;
+	}
+	section .content {
+		padding-top: 30px;
+	}
+	section .accordion-list {
+		padding-bottom: 30px;
+	}
 }

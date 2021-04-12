@@ -1,69 +1,64 @@
 
-/*--------------------------------------------------------------
-# Base
---------------------------------------------------------------*/
-
-
 body {
-  font-family: var(--readable-font), sans-serif;
-  color: var(--grey-8-color);
+	font-family: var(--readable-font), sans-serif;
+	color: var(--grey-8-color);
 }
 
 body.fixed-bg {
-  --body-bg: url(../img/backgrounds/w1920/Acceuil.jpg);
-  background-image: var(--body-bg);
-  background-attachment: fixed;
-  background-size: cover;
-  transition: background 3s;
-  background-position: center;
+	--body-bg: url(../img/backgrounds/w1920/Acceuil.jpg);
+	background-image: var(--body-bg);
+	background-attachment: fixed;
+	background-size: cover;
+	transition: background 3s;
+	background-position: center;
 }
 
 body.fixed-bg.bg-fx-layer::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    transition: all 3s;
-	
-    /* background: radial-gradient(transparent,black); */
-    /* background: radial-gradient(transparent, black 80%); */
-    --body-bg-fx: 90deg;
-    background-image: linear-gradient(var(--body-bg-fx),rgba(0,0,0,0.8) 15%,transparent, rgba(0,0,0,0.8) 85%);
-    background-size: 200%;
-    /* background-position-x: 100%; */
-    
+	content: "";
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	transition: all 3s;
+
+	/* background: radial-gradient(transparent,black); */
+	/* background: radial-gradient(transparent, black 80%); */
+	--body-bg-fx: 90deg;
+	background-image: linear-gradient(var(--body-bg-fx),rgba(0,0,0,0.8) 15%,transparent, rgba(0,0,0,0.8) 85%);
+	background-size: 200%;
+	/* background-position-x: 100%; */
+
 	
 	/* backdrop-filter: brightness(0.5) saturate(0); */
-    /* filter: saturate(0.5); */
+	/* filter: saturate(0.5); */
 	/* background-position-x: -200px; */
 
 
-    /* background-size: 50%; */
-    /* background-repeat: no-repeat; */
-    /* background-position-x: -400px; */
-    /* background-position-x: 400px; */
-    /* background: linear-gradient(-90deg,transparent, black 80%); */
-    /* background-position-x: -400px; */
+	/* background-size: 50%; */
+	/* background-repeat: no-repeat; */
+	/* background-position-x: -400px; */
+	/* background-position-x: 400px; */
+	/* background: linear-gradient(-90deg,transparent, black 80%); */
+	/* background-position-x: -400px; */
 }
 
 
 a {
-  text-decoration: none;
-  color: var(--accent-color);
+	text-decoration: none;
+	color: var(--accent-color);
 }
 
 a:hover {
-  color: var(--accent-color-lighter);
-  text-decoration: none;
+	color: var(--accent-color-lighter);
+	text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--fantasy-font), sans-serif;
+	font-family: var(--fantasy-font), sans-serif;
 }
 
 h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
-    margin: 0;
+	margin: 0;
 }

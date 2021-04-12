@@ -7,108 +7,108 @@
 
 
 :root, .theme-light {
-  --readable-font: "Fira Sans";
-  --fantasy-font: "Dosis";
-  /* --logo-font: "Indie Flower"; */
-  --speach-font: "Comic Neue";
+	--readable-font: "Fira Sans";
+	--fantasy-font: "Dosis";
+	/* --logo-font: "Indie Flower"; */
+	--speach-font: "Comic Neue";
 
 	
-  --accent-color:         #ffb03b;
-  --accent-color-h:       36;
-  --accent-color-s:       100%;
-  --accent-color-l:       62%;
-  --accent-color-hs:      var(--accent-color-h), var(--accent-color-s);
-  --accent-color-sl:      var(--accent-color-s), var(--accent-color-l);
-  --accent-color-hsl:     var(--accent-color-h), var(--accent-color-s), var(--accent-color-l);
-  --accent-color:         hsl(var(--accent-color-hsl));
-  --accent-color-cpl:     hsl(calc(var(--accent-color-h) + 180),var(--accent-color-sl));
-  
-  --accent-color-L95:       hsl(var(--accent-color-h), var(--accent-color-s), 95% );
+	--accent-color:         #ffb03b;
+	--accent-color-h:       36;
+	--accent-color-s:       100%;
+	--accent-color-l:       62%;
+	--accent-color-hs:      var(--accent-color-h), var(--accent-color-s);
+	--accent-color-sl:      var(--accent-color-s), var(--accent-color-l);
+	--accent-color-hsl:     var(--accent-color-h), var(--accent-color-s), var(--accent-color-l);
+	--accent-color:         hsl(var(--accent-color-hsl));
+	--accent-color-cpl:     hsl(calc(var(--accent-color-h) + 180),var(--accent-color-sl));
+	
+	--accent-color-L95:       hsl(var(--accent-color-h), var(--accent-color-s), 95% );
 
-  --accent-color-deeper:  #ff9b08;
-  --accent-color-lighter: #ffc56e;
-  
+	--accent-color-deeper:  #ff9b08;
+	--accent-color-lighter: #ffc56e;
+	
 /*   --accent-color-deeper:  #99 24f4;
-  --accent-color:         #9d 4edb;
-  --accent-color-lighter: #bb 6ff7; */
+	--accent-color:         #9d 4edb;
+	--accent-color-lighter: #bb 6ff7; */
 
-  --solid-color: rgba(26, 24, 22, 0.8);
+	--solid-color: rgba(26, 24, 22, 0.8);
 
-  --topbar-height: 50px;
-  --topbar-color: var(--solid-color);
-  --topbar-text-color: rgba(255, 255, 255, 0.7);
-  --header-color: rgba(26, 24, 22, 0.85);
-  --header-effect: none;
-  
-  --hero-bg-color: rgba(39, 37, 34, 0.8);
+	--topbar-height: 50px;
+	--topbar-color: var(--solid-color);
+	--topbar-text-color: rgba(255, 255, 255, 0.7);
+	--header-color: rgba(26, 24, 22, 0.85);
+	--header-effect: none;
+	
+	--hero-bg-color: rgba(39, 37, 34, 0.8);
 
-  --card-color: var(--white-color);
+	--card-color: var(--white-color);
 
-  --footer-color: #35322d;
+	--footer-color: #35322d;
 
-  --black-color:  #000000;
-  --grey-1-color: #111111;
-  --grey-2-color: #222222;
-  --grey-3-color: #333333;
-  --grey-4-color: #444444;
-  --grey-5-color: #555555;
-  --grey-6-color: #666666;
-  --grey-7-color: #777777;
-  --grey-8-color: #848484;
-  --grey-8-color: #888888;
-  --grey-9-color: #999999;
-  --grey-a-color: #aaaaaa;
-  --grey-b-color: #bbbbbb;
-  --grey-c-color: #cccccc;
-  --grey-d-color: #dddddd;
-  --grey-e-color: #eeeeee;
-  --white-color:  #ffffff;
+	--black-color:  #000000;
+	--grey-1-color: #111111;
+	--grey-2-color: #222222;
+	--grey-3-color: #333333;
+	--grey-4-color: #444444;
+	--grey-5-color: #555555;
+	--grey-6-color: #666666;
+	--grey-7-color: #777777;
+	--grey-8-color: #848484;
+	--grey-8-color: #888888;
+	--grey-9-color: #999999;
+	--grey-a-color: #aaaaaa;
+	--grey-b-color: #bbbbbb;
+	--grey-c-color: #cccccc;
+	--grey-d-color: #dddddd;
+	--grey-e-color: #eeeeee;
+	--white-color:  #ffffff;
 
-  --ko-color: #ed3c0d;
-  --ok-color: #18d26e;
+	--ko-color: #ed3c0d;
+	--ok-color: #18d26e;
 
 
-  --c28-color: #46423b;
-  --link-color:  #433f39;
-  --c7-color:  var(--link-color);
-  --c8-color:  #5f5950;
-  /* --c24-color: #7a7368; */
-  --c14-color: #6c665c;
-  --c18-color: #948c81;
-  --c10-color: #6c757d;
-  --c16-color: #dad8d4;
-  --c19-color: #e8e7e4;
-  --c9-color:  #f2f1ef;
-  --c11-color: #fffaf3;
-  /* --c26-color: #fff6e8; */
+	--c28-color: #46423b;
+	--link-color:  #433f39;
+	--c7-color:  var(--link-color);
+	--c8-color:  #5f5950;
+	/* --c24-color: #7a7368; */
+	--c14-color: #6c665c;
+	--c18-color: #948c81;
+	--c10-color: #6c757d;
+	--c16-color: #dad8d4;
+	--c19-color: #e8e7e4;
+	--c9-color:  #f2f1ef;
+	--c11-color: #fffaf3;
+	/* --c26-color: #fff6e8; */
 
 }
 .theme-dark {
-  
-/*   --black-color: var(--white-color); */
-  --grey-1-color: #eee;
-  --grey-2-color: #ddd;
-  --grey-3-color: #ccc;
-  --grey-4-color: #bbb;
-  --grey-5-color: #aaa;
-  --grey-6-color: #999;
-  --grey-7-color: #888;
-  --grey-8-color: #777;
-  --grey-9-color: #666;
-  --grey-a-color: #555;
-  --grey-b-color: #444;
-  --grey-c-color: #333;
-  --grey-d-color: #222;
-  --grey-e-color: #111;
-/*   --white-color: var(--black-color); */
+	
+	/* --black-color: var(--white-color); */
+	--grey-1-color: #eee;
+	--grey-2-color: #ddd;
+	--grey-3-color: #ccc;
+	--grey-4-color: #bbb;
+	--grey-5-color: #aaa;
+	--grey-6-color: #999;
+	--grey-7-color: #888;
+	--grey-8-color: #777;
+	--grey-9-color: #666;
+	--grey-a-color: #555;
+	--grey-b-color: #444;
+	--grey-c-color: #333;
+	--grey-d-color: #222;
+	--grey-e-color: #111;
+	/* --white-color: var(--black-color); */
 
-  --card-color: var(--solid-color);
+	--card-color: var(--solid-color);
 
-  --c8-color: #fff;
-  --grey-8-color: #e8e7e4;
-  --grey-4-c:olor: #f00;
+	--c8-color: #fff;
+	--grey-8-color: #e8e7e4;
+	--grey-4-c:olor: #f00;
 }
 .theme-dark .content,
 .theme-dark .section-title {
-  text-shadow: 0 2px 2px black, 0 2px 6px rgba(0,0,0,0.5);
+	text-shadow: 0 2px 2px black, 0 2px 6px rgba(0,0,0,0.5);
 }
