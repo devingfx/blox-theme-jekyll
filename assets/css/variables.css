@@ -121,6 +121,8 @@
 	--grey-4-c:olor: #f00;
 }
 .theme-dark .content,
-.theme-dark .section-title {
+.theme-dark .section-title,
+.theme-dark .btn,
+.theme-dark button {
 	text-shadow: 0 2px 2px black, 0 2px 6px rgba(0,0,0,0.5);
 }
