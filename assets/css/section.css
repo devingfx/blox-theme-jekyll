@@ -5,6 +5,7 @@ section {
 	background: transparent;
 }
 section.hero { margin: 0 }
+section:last-child { margin-bottom: 0 }
 
 section .content {
 	background: var(--header-color);
