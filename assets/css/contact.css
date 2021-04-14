@@ -128,7 +128,7 @@
 }
 
 .contact .form button[type="submit"]:hover {
-  background: var(--accent-color-deeper);
+  background: var(--accent-color-darker);
 }
 
 @-webkit-keyframes animate-loading {

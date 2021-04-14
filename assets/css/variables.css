@@ -13,31 +13,43 @@
 	--speach-font: "Comic Neue";
 
 	
-	--accent-color:         #ffb03b;
-	--accent-color-h:       36;
-	--accent-color-s:       100%;
-	--accent-color-l:       62%;
-	--accent-color-hs:      var(--accent-color-h), var(--accent-color-s);
-	--accent-color-sl:      var(--accent-color-s), var(--accent-color-l);
-	--accent-color-hsl:     var(--accent-color-h), var(--accent-color-s), var(--accent-color-l);
-	--accent-color:         hsl(var(--accent-color-hsl));
-	--accent-color-cpl:     hsl(calc(var(--accent-color-h) + 180),var(--accent-color-sl));
+	--accent-color:           hsl(36, 100%, 62%);
+	--accent-color-h:         36;
+	--accent-color-s:         100%;
+	--accent-color-l:         62%;
+	--accent-color-hs:        var(--accent-color-h), var(--accent-color-s);
+	--accent-color-sl:        var(--accent-color-s), var(--accent-color-l);
+	--accent-color-hsl:       var(--accent-color-h), var(--accent-color-s), var(--accent-color-l);
+	--accent-color:           hsl(var(--accent-color-hsl));
+	--accent-color-cpl:       hsl(calc(var(--accent-color-h) + 180),var(--accent-color-sl));
 	
-	--accent-color-L95:       hsl(var(--accent-color-h), var(--accent-color-s), 95% );
+	--accent-color-G1:        hsl(var(--accent-color-hs), 10% );
+	--accent-color-G2:        hsl(var(--accent-color-hs), 20% );
+	--accent-color-G3:        hsl(var(--accent-color-hs), 30% );
+	--accent-color-G4:        hsl(var(--accent-color-hs), 40% );
+	--accent-color-G5:        hsl(var(--accent-color-hs), 50% );
+	--accent-color-G6:        hsl(var(--accent-color-hs), 60% );
+	--accent-color-G7:        hsl(var(--accent-color-hs), 70% );
+	--accent-color-G8:        hsl(var(--accent-color-hs), 80% );
+	--accent-color-G9:        hsl(var(--accent-color-hs), 90% );
 
-	--accent-color-deeper:  #ff9b08;
-	--accent-color-lighter: #ffc56e;
+    --light-threshold:        10%;
+    --dark-threshold:         calc(var(--light-threshold) * -1);
+	--accent-color-darker:    hsl(var(--accent-color-hs), calc(var(--accent-color-l) + var(--dark-threshold)) );
+	--accent-color-lighter:   hsl(var(--accent-color-hs), calc(var(--accent-color-l) + var(--light-threshold)) );
+
 	
-/*   --accent-color-deeper:  #99 24f4;
-	--accent-color:         #9d 4edb;
-	--accent-color-lighter: #bb 6ff7; */
+	/* --accent-color:         hsl(274, 66%, 58%);
+	--accent-color-h:         274;
+	--accent-color-s:         66%;
+	--accent-color-l:         58%; */
 
 	--solid-color: rgba(26, 24, 22, 0.8);
 
 	--topbar-height: 50px;
 	--topbar-color: var(--solid-color);
 	--topbar-text-color: rgba(255, 255, 255, 0.7);
-	--header-color: rgba(26, 24, 22, 0.85);
+	--header-color: var(--solid-color);
 	--header-effect: none;
 	
 	--hero-bg-color: rgba(39, 37, 34, 0.8);
