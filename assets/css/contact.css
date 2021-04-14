@@ -104,12 +104,27 @@
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .form input, .contact .form textarea {
+
+.contact .form input,
+.contact .form textarea {
   border-radius: 0;
   box-shadow: none;
-  font-size: 14px;
+  border: none;
 }
-
+.theme-dark .contact .form input,
+.theme-dark .contact .form textarea {
+  background: var(--footer-color);
+  color: var(--white-color);
+}
+.theme-dark .contact .form input::placeholder,
+.theme-dark .contact .form textarea::placeholder {
+  color: var(--grey-6-color);
+}
+.theme-dark .contact .form input:focus,
+.theme-dark .contact .form textarea:focus {
+  outline: 1px solid var(--accent-color-deeper);
+  box-shadow: 0 0 0 0.25rem hsla(var(--accent-color-hsl), 0.1);
+}
 .contact .form input {
   height: 44px;
 }
