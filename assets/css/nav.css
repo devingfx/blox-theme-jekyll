@@ -15,8 +15,7 @@
 .navbar li {
 	position: relative;
 }
-
-.navbar a {
+.navbar .nav-link {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -27,14 +26,17 @@
 	white-space: nowrap;
 	transition: 0.3s;
 }
+.navbar .nav-link:focus {
+    outline: none;
+}
 
-.navbar a i {
+.navbar .nav-link i {
 	font-size: 12px;
 	line-height: 0;
 	margin-left: 5px;
 }
 
-.navbar a:hover, .navbar .active, .navbar li:hover > a {
+.navbar .nav-link:hover, .navbar .active, .navbar li:hover > a {
 	color: var(--accent-color);
 }
 
