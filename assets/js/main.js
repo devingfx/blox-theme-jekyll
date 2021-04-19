@@ -29,14 +29,14 @@ let $navs = $$('#navbar .scrollto')
 const activeNav = () => {
 	let position = window.scrollY + 200
 	$navs.forEach($nav => {
-	if (!$nav.hash) return
-	let $section = $($nav.hash)
-	if (!$section) return
-	if (position >= $section.offsetTop && position <= ($section.offsetTop + $section.offsetHeight)) {
-		$nav.classList.add('active')
-	} else {
-		$nav.classList.remove('active')
-	}
+		if (!$nav.hash) return
+		let $section = $($nav.hash)
+		if (!$section) return
+		if (position >= $section.offsetTop && position <= ($section.offsetTop + $section.offsetHeight)) {
+			$nav.classList.add('active')
+		} else {
+			$nav.classList.remove('active')
+		}
 	})
 }
 on`scroll`( activeNav )
@@ -137,27 +137,27 @@ Region( '-70px 100px 0px 100px', 1 ).on('[data-body-bg]', e=> {
 })
 
 
-const altCss = new CSSStyleSheet()
-document.adoptedStyleSheets = [altCss]
+// const altCss = new CSSStyleSheet()
+// document.adoptedStyleSheets = [altCss]
 
-const shortcuts = {
-	is(e){ if( e.altKey && (e.code in this) ){ e.preventDefault(); return true } },
-	KeyA(){ altCss.replaceSync(`body:after { display: none }`) },
-	KeyB(){ altCss.replaceSync(`body:after {}`) },
-	KeyC(){ altCss.replaceSync(`body:after { background-image: radial-gradient(transparent, black) }`) },
-	KeyE(){ altCss.replaceSync(`body:after { backdrop-filter: saturate(0) }`) },
-	KeyF(){ altCss.replaceSync(`body:after { backdrop-filter: sepia(0.5) saturate(2) }`) },
+// const shortcuts = {
+// 	is(e){ if( e.altKey && (e.code in this) ){ e.preventDefault(); return true } },
+// 	KeyA(){ altCss.replaceSync(`body:after { display: none }`) },
+// 	KeyB(){ altCss.replaceSync(`body:after {}`) },
+// 	KeyC(){ altCss.replaceSync(`body:after { background-image: radial-gradient(transparent, black) }`) },
+// 	KeyE(){ altCss.replaceSync(`body:after { backdrop-filter: saturate(0) }`) },
+// 	KeyF(){ altCss.replaceSync(`body:after { backdrop-filter: sepia(0.5) saturate(2) }`) },
 	
-	KeyG(){ altCss.replaceSync(`body:after { background-position-x: 0% !important }`) },
-	KeyD(){ altCss.replaceSync(`body:after { background-position-x: 100% !important }`) },
-}
-// window.addEventListener('keydown', e=>
-// 	shortcuts.is(e) && shortcuts[e.code]()
-// , true )
+// 	KeyG(){ altCss.replaceSync(`body:after { background-position-x: 0% !important }`) },
+// 	KeyD(){ altCss.replaceSync(`body:after { background-position-x: 100% !important }`) },
+// }
+// // window.addEventListener('keydown', e=>
+// // 	shortcuts.is(e) && shortcuts[e.code]()
+// // , true )
 
-on`keydown`( e=>
-	shortcuts.is(e) && shortcuts[e.code]( e )
-, window, true )
+// on`keydown`( e=>
+// 	shortcuts.is(e) && shortcuts[e.code]( e )
+// , window, true )
 
 
 
