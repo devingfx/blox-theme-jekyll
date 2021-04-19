@@ -203,14 +203,14 @@ $$('.navbar .dropdown > a').map( el=> el.onclick = e=> {
  * Scroll to #hash of .scrollto's
  */
 $$('.scrollto').map( el=> el.onclick = e=> {
-	if( $(this.hash) )
+	if( $(e.target.hash) )
 	{
 		e.preventDefault()
 
 		if( $navbar.classList.contains('navbar-mobile') )
 			toggleMobile()
 
-		scrollto( this.hash )
+		scrollto( e.target.hash )
 	}
 })
 
