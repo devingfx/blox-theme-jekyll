@@ -28,3 +28,7 @@
 	font-style: normal;
 	padding: 5px;
 }
+
+#topbar p {
+    margin: 0;
+}
