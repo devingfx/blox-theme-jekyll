@@ -5,8 +5,8 @@ body {
 }
 
 body.fixed-bg {
-	--body-bg: url(../img/backgrounds/w1920/Acceuil.jpg);
-	background-image: var(--body-bg);
+	/* --body-bg: url(../img/backgrounds/w1920/Acceuil.jpg);
+	background-image: var(--body-bg); */
 	background-attachment: fixed;
 	background-size: cover;
 	transition: background 3s;
