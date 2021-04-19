@@ -5,7 +5,7 @@
 		<div class="container-fluid container-xl d-flex align-items-center justify-content-center justify-content-lg-start gap-5">
 		{%- for item in include.data.topbar -%}
 			{%- for key in item -%}{%- assign icon = key[0] -%}{%- assign text = key[1] -%}{%- endfor -%}
-			<span class="{%if not forloop.first%}d-none d-lg-flex{%else%}d-flex{%endif%} align-items-center"><i class="bi bi-{{ icon }}"></i>{{ text | markdownify }}</span>
+			<span class=" align-items-center"><i class="bi bi-{{ icon }}"></i>{{ text | markdownify }}</span>
 		{%- endfor -%}
 		<!-- <i class="bi bi-phone d-flex align-items-center"><span>{ { site.data.user.mobile }}</span></i>
 		<i class="bi bi-clock ms-4 d-none d-lg-flex align-items-center"><span>{ { site.data.user.openingHours }}</span></i> -->
