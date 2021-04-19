@@ -17,18 +17,26 @@
 	top: -50px;
 }
 
-#topbar i {
-	color: var(--accent-color);
-	line-height: 0;
-	padding-right: 5px;
-}
-
 #topbar span {
 	color: var(--white-color);
 	font-style: normal;
 	padding: 5px;
 }
 
+#topbar i {
+	color: var(--accent-color);
+	line-height: 0;
+	padding-right: 5px;
+}
+
 #topbar p {
     margin: 0;
+}
+
+#topbar a {
+    color: var(--white-color);
+}
+
+#topbar a:hover, #topbar a:focus {
+    color: var(--accent-color);
 }
