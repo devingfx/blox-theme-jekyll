@@ -1,10 +1,17 @@
 
 <section id="{{name}}" class="columns {{name}}">
-	<div class="container-fluid">
+
+	{%- assign type = 'container' | split: ',' -%}
+	{%- if include.data.size -%}
+		{%- assign type = type | push: include.data.size -%}
+	{%- endif -%}
+	
+	
+	<div class="{{ type | join: '-'}} {{ include.data.class }}">
 
 		<div class="row">
 		
-			{% for col in include.data %}
+			{% for col in include.data.columns %}
 			
 				{%- assign content = false -%}
 				{%- assign image = false -%}
