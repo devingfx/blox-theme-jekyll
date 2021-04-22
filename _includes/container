@@ -2,8 +2,8 @@
 <section id="{{name}}" class="columns {{name}}">
 
 	{%- assign type = 'container' | split: ',' -%}
-	{%- if include.data.size -%}
-		{%- assign type = type | push: include.data.size -%}
+	{%- if include.data.type -%}
+		{%- assign type = type | push: include.data.type -%}
 	{%- endif -%}
 	
 	
