@@ -2,7 +2,10 @@
 <section id="{{name}}" class="columns {{name}}">
 
 	{%- assign type = 'container' | split: ',' -%}
+	<!-- data {{ include.data }} -->
+	<!-- type {{ include.data.type }} -->
 	{%- if include.data.type -%}
+		<!-- dans if {{ include.data.type }} -->
 		{%- assign type = type | push: include.data.type -%}
 	{%- endif -%}
 	
