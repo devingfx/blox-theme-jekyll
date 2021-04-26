@@ -109,15 +109,30 @@ if( $headerStyle.position == 'sticky' )
 		})
 
 
-// background-image: radial-gradient( transparent, black), url(assets/img/backgrounds/w1920/abstract-2178720.jpg);
-// background-blend-mode: luminosity, normal;
-// background-attachment: fixed;
-// const bgs = {
-// 	hero: '.../img/backgrounds/w1920/abstract-2178720.jpg'
-// ,	about: '.../img/backgrounds/w1920/piano-4487573.jpg'
-// ,	gallery: '.../img/backgrounds/w1920/piano-2308370.jpg'
-// ,	contact: '.../img/backgrounds/h1280/piano-1143734.jpg'
-// }
+
+var nextImage
+const fadeBg = ({ bodyBg, bodyBgPosition })=> {
+
+	if( $body.hasAttribute('fading') )
+		return nextImage = { bodyBg, bodyBgPosition }
+	
+	$body.setAttribute('fading','')
+	$body.style.setProperty('background-image', `url("${bodyBg}")` )
+	bodyBgPosition
+		? $body.style.backgroundPosition = bodyBgPosition
+		: $body.style.removeProperty( 'background-position' )
+}
+
+const imageFinish = e=> {
+	console.log(e)
+	document.body.removeAttribute('fading')
+	nextImage && fadeBg( nextImage )
+}
+on`transitionend`( e=>
+	e.target == document.body
+	&& e.propertyName == "background-image"
+		&& imageFinish( e )
+)
 
 // let dbgdiv = document.createElement('div')
 // dbgdiv.style = `border: 1px solid red; position:fixed; z-index: 1000; pointer-events: none;
@@ -129,10 +144,11 @@ Region( '-70px 100px 0px 100px', 1 ).on('[data-body-bg]', e=> {
 		// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
 	if(e.isIntersecting) {
 		// e.intersectionRatio > 0 && ()
-		$body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
-		e.target.dataset.bodyBgPosition
-			? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
-			: $body.style.removeProperty( 'background-position' )
+		fadedBg( e.target.dataset )
+		// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
+		// e.target.dataset.bodyBgPosition
+		// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
+		// 	: $body.style.removeProperty( 'background-position' )
 	}
 })
 
