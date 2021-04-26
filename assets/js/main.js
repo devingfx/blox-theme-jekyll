@@ -136,6 +136,7 @@ const ImageFader = $el=> {
 	const doFadeBg = ()=> {
 		
 		let { bodyBg, bodyBgPosition } = nextState
+		nextState = null
 		
 		$el.toggleAttribute( 'fading', true )
 		
@@ -148,6 +149,17 @@ const ImageFader = $el=> {
 		setTimeout( fadeEnd, delay() )
 		
 	}
+
+	const fadeEnd = ()=> {
+		// console.log(e)
+		$el.removeAttribute('fading')
+		nextState && fadeNext( nextState )
+	}
+	// on`transitionend`( e=>
+	// 	e.target == $body
+	// 	&& e.propertyName == "background-image"
+	// 		&& fadeEnd( e )
+	// )
 	
 	const fadeNext = ( state )=> {
 
@@ -162,17 +174,6 @@ const ImageFader = $el=> {
 		
 		setTimeout( ()=> doFadeBg(), threshold )
 	}
-
-	const fadeEnd = e=> {
-		// console.log(e)
-		$el.removeAttribute('fading')
-		nextState && fadeNext( nextState )
-	}
-	// on`transitionend`( e=>
-	// 	e.target == $body
-	// 	&& e.propertyName == "background-image"
-	// 		&& fadeEnd( e )
-	// )
 
 	Region( '-70px 100px 0px 100px', 1 )
 		.on('[data-body-bg]', e=> {
