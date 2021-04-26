@@ -5,3 +5,48 @@
 	z-index: -1;
 	pointer-events: none;
 }
+
+
+.bg-cover {
+	background-size: cover;
+	background-position: center;
+}
+.bg-fixed {
+	background-attachment: fixed;
+}
+.bg-anim {
+	--anim-duration: var(--anim-duration, 3s);
+	transition: background var(--anim-duration);
+}
+
+.bg-fixed.bg-fx-layer::after {
+	content: "";
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	transition: all 3s;
+
+	/* background: radial-gradient(transparent,black); */
+	/* background: radial-gradient(transparent, black 80%); */
+	--body-bg-fx: 90deg;
+	background-image: linear-gradient(var(--body-bg-fx),rgba(0,0,0,0.8) 15%,transparent, rgba(0,0,0,0.8) 85%);
+	background-size: 200%;
+	/* background-position-x: 100%; */
+
+	
+	/* backdrop-filter: brightness(0.5) saturate(0); */
+	/* filter: saturate(0.5); */
+	/* background-position-x: -200px; */
+
+
+	/* background-size: 50%; */
+	/* background-repeat: no-repeat; */
+	/* background-position-x: -400px; */
+	/* background-position-x: 400px; */
+	/* background: linear-gradient(-90deg,transparent, black 80%); */
+	/* background-position-x: -400px; */
+}
+
