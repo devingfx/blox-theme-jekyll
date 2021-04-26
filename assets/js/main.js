@@ -117,7 +117,8 @@ if( $headerStyle.position == 'sticky' )
 
 const ImageFader = $el=> {
 	
-	let nextImage, i
+	let nextState, i
+	,	threshold = 1000
 	,	images = [...document.querySelectorAll(`[data-body-bg]`)]
 					.map( n=> n.dataset.bodyBg )
 					.map( src=> (i = new Image, i.src = src, i) )
@@ -132,31 +133,45 @@ const ImageFader = $el=> {
 							[0]
 					 ) * 1100
 	
-	const fadeBg = ({ bodyBg, bodyBgPosition })=> {
-
-		if( $el.hasAttribute('fading') )
-			return nextImage = { bodyBg, bodyBgPosition }
+	const doFadeBg = ()=> {
 		
-		bodyBg = nextImage ? nextImage.bodyBg : bodyBg
-		bodyBgPosition = nextImage ? nextImage.bodyBgPosition : bodyBgPosition
-		nextImage = null
-		$el.setAttribute('fading','')
-		$el.style.setProperty('background-image', `url("${bodyBg}")` )
+		let { bodyBg, bodyBgPosition } = nextState
+		
+		$el.toggleAttribute( 'fading', true )
+		
+		$el.style.setProperty( 'background-image', `url("${bodyBg}")` )
+		
 		bodyBgPosition
 			? $el.style.backgroundPosition = bodyBgPosition
 			: $el.style.removeProperty( 'background-position' )
-		setTimeout( ()=>imageFinish(), delay() )
+		
+		setTimeout( fadeEnd, delay() )
+		
+	}
+	
+	const fadeNext = ( state )=> {
+
+		nextState = state
+		if( $el.hasAttribute('fading') )
+			return
+		
+		// bodyBg = nextState ? nextState.bodyBg : bodyBg
+		// bodyBgPosition = nextState ? nextState.bodyBgPosition : bodyBgPosition
+		
+		
+		
+		setTimeout( ()=> doFadeBg(), threshold )
 	}
 
-	const imageFinish = e=> {
+	const fadeEnd = e=> {
 		// console.log(e)
 		$el.removeAttribute('fading')
-		nextImage && fadeBg( nextImage )
+		nextState && fadeNext( nextState )
 	}
 	// on`transitionend`( e=>
 	// 	e.target == $body
 	// 	&& e.propertyName == "background-image"
-	// 		&& imageFinish( e )
+	// 		&& fadeEnd( e )
 	// )
 
 	Region( '-70px 100px 0px 100px', 1 )
@@ -164,7 +179,7 @@ const ImageFader = $el=> {
 				// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
 			if(e.isIntersecting) {
 				// e.intersectionRatio > 0 && ()
-				fadeBg( e.target.dataset )
+				fadeNext( e.target.dataset )
 				// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
 				// e.target.dataset.bodyBgPosition
 				// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
