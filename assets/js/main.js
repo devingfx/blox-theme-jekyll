@@ -116,6 +116,8 @@ const fadeBg = ({ bodyBg, bodyBgPosition })=> {
 	if( $body.hasAttribute('fading') )
 		return nextImage = { bodyBg, bodyBgPosition }
 	
+	let { bodyBg, bodyBgPosition } = nextImage ? nextImage : { bodyBg, bodyBgPosition }
+	nextImage = null
 	$body.setAttribute('fading','')
 	$body.style.setProperty('background-image', `url("${bodyBg}")` )
 	bodyBgPosition
@@ -144,7 +146,7 @@ Region( '-70px 100px 0px 100px', 1 ).on('[data-body-bg]', e=> {
 		// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
 	if(e.isIntersecting) {
 		// e.intersectionRatio > 0 && ()
-		fadedBg( e.target.dataset )
+		fadeBg( e.target.dataset )
 		// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
 		// e.target.dataset.bodyBgPosition
 		// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
