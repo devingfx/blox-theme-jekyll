@@ -83,11 +83,11 @@
 	font-size: 28px;
 	margin: 0;
 	line-height: 1;
-	font-weight: 400;
-	letter-spacing: 3px;
+	font-weight: 700;
 }
 
-#header .logo h1 a, #header .logo h1 a:hover {
+#header .logo h1 a,
+#header .logo h1 a:hover {
 	color: var(--white-color);
 	text-decoration: none;
 }
