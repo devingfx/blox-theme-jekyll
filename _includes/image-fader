@@ -1,1 +1,1 @@
-<div class="image-fader fixed-bg"></div>
+<div class="image-fader {{name}} {{include.data.class}}"></div>
