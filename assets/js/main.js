@@ -82,18 +82,24 @@ const Region = ( margin, threshold = 0,
 		document.querySelectorAll(sel).forEach( el=> obs.observe(el) )
 		return this
 	}
+,	set helper( v )
+	{
+		if( v )
+		{
+			let div = document.createElement('div')
+			let [ top, right, bottom, left ] = margin.split(/\s+/).map( parseFloat )
+			div.style = `border: 1px solid red; position:fixed; z-index: 1000; pointer-events: none;
+			top: ${-top}px; right: ${-right}px; bottom: ${-bottom}px; left: ${-left}px;`
+			document.body.append( div )
+			this._helper = div
+		}
+		else if( this._helper )
+		{
+			this._helper.remove()
+		}
+	}
 })
-// const observer = 
-// new IntersectionObserver( 
-// 	([e]) => console.log(e.intersectionRatio )|| e.target.classList.toggle("header-scrolled", e.intersectionRatio == 0),
-// 	{thresholds: 1, rootMargin: "-100px 0px 0px 0px"}
-// )
 
-// observer.observe(el)
-// let dbgdiv = document.createElement('div')
-// dbgdiv.style = `border: 1px solid red; position:fixed; z-index: 1000; top: 1px; right: 0px; bottom: 0px; left: 0px;`
-// document.body.append( dbgdiv )
-// const visibleRegion = 
 // Region( -100,0,0,0 )
 // Region( '50%',0,0,0 )
 
@@ -109,33 +115,80 @@ if( $headerStyle.position == 'sticky' )
 		})
 
 
-
-var nextImage
-const fadeBg = ({ bodyBg, bodyBgPosition })=> {
-
-	if( $body.hasAttribute('fading') )
-		return nextImage = { bodyBg, bodyBgPosition }
+const ImageFader = $el=> {
 	
-	bodyBg = nextImage ? nextImage.bodyBg : bodyBg
-	bodyBgPosition = nextImage ? nextImage.bodyBgPosition : bodyBgPosition
-	nextImage = null
-	$body.setAttribute('fading','')
-	$body.style.setProperty('background-image', `url("${bodyBg}")` )
-	bodyBgPosition
-		? $body.style.backgroundPosition = bodyBgPosition
-		: $body.style.removeProperty( 'background-position' )
+	let nextImage
+	
+	const fadeBg = ({ bodyBg, bodyBgPosition })=> {
+
+		if( $el.hasAttribute('fading') )
+			return nextImage = { bodyBg, bodyBgPosition }
+		
+		bodyBg = nextImage ? nextImage.bodyBg : bodyBg
+		bodyBgPosition = nextImage ? nextImage.bodyBgPosition : bodyBgPosition
+		nextImage = null
+		$el.setAttribute('fading','')
+		$el.style.setProperty('background-image', `url("${bodyBg}")` )
+		bodyBgPosition
+			? $el.style.backgroundPosition = bodyBgPosition
+			: $el.style.removeProperty( 'background-position' )
+	}
+
+	const imageFinish = e=> {
+		console.log(e)
+		$el.removeAttribute('fading')
+		nextImage && fadeBg( nextImage )
+	}
+	on`transitionend`( e=>
+		e.target == $body
+		&& e.propertyName == "background-image"
+			&& imageFinish( e )
+	)
+
+	Region( '-70px 100px 0px 100px', 1 )
+		.on('[data-body-bg]', e=> {
+				// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
+			if(e.isIntersecting) {
+				// e.intersectionRatio > 0 && ()
+				fadeBg( e.target.dataset )
+				// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
+				// e.target.dataset.bodyBgPosition
+				// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
+				// 	: $body.style.removeProperty( 'background-position' )
+			}
+		})
+		.helper = true
+
 }
 
-const imageFinish = e=> {
-	console.log(e)
-	document.body.removeAttribute('fading')
-	nextImage && fadeBg( nextImage )
-}
-on`transitionend`( e=>
-	e.target == document.body
-	&& e.propertyName == "background-image"
-		&& imageFinish( e )
-)
+ImageFader( $body )
+
+// var nextImage
+// const fadeBg = ({ bodyBg, bodyBgPosition })=> {
+
+// 	if( $body.hasAttribute('fading') )
+// 		return nextImage = { bodyBg, bodyBgPosition }
+	
+// 	bodyBg = nextImage ? nextImage.bodyBg : bodyBg
+// 	bodyBgPosition = nextImage ? nextImage.bodyBgPosition : bodyBgPosition
+// 	nextImage = null
+// 	$body.setAttribute('fading','')
+// 	$body.style.setProperty('background-image', `url("${bodyBg}")` )
+// 	bodyBgPosition
+// 		? $body.style.backgroundPosition = bodyBgPosition
+// 		: $body.style.removeProperty( 'background-position' )
+// }
+
+// const imageFinish = e=> {
+// 	console.log(e)
+// 	document.body.removeAttribute('fading')
+// 	nextImage && fadeBg( nextImage )
+// }
+// on`transitionend`( e=>
+// 	e.target == document.body
+// 	&& e.propertyName == "background-image"
+// 		&& imageFinish( e )
+// )
 
 // let dbgdiv = document.createElement('div')
 // dbgdiv.style = `border: 1px solid red; position:fixed; z-index: 1000; pointer-events: none;
