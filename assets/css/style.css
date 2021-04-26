@@ -1,11 +1,15 @@
 @import 'variables.css';
 @import 'base.css';
-@import 'back-to-top.css';
+
 @import 'topbar.css';
 @import 'header.css';
 @import 'nav.css';
+@import 'back-to-top.css';
+
+@import 'image-fader.css';
 @import 'section.css';
 @import 'center-text.css';
 @import 'gallery.css';
 @import 'contact.css';
+
 @import 'footer.css';

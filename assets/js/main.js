@@ -117,6 +117,8 @@ if( $headerStyle.position == 'sticky' )
 
 const ImageFader = $el=> {
 	
+	if( !$el ) return
+	
 	let nextState, i
 	,	threshold = 1000
 	,	images = [...document.querySelectorAll(`[data-body-bg]`)]
@@ -179,8 +181,8 @@ const ImageFader = $el=> {
 		// .helper = true
 
 }
-
-ImageFader( $body )
+let $fader = $(`.image-fader`)
+ImageFader( $fader )
 
 // var nextImage
 // const fadeBg = ({ bodyBg, bodyBgPosition })=> {
