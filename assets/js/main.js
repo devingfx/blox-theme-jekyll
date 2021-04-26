@@ -166,6 +166,7 @@ const ImageFader = $el=> {
 		if( $el.hasAttribute('fading') )
 			return
 		
+		$el.toggleAttribute( 'fading', true )
 		setTimeout( doFadeBg, threshold )
 	}
 
