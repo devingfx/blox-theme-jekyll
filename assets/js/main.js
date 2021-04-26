@@ -124,11 +124,13 @@ const ImageFader = $el=> {
 	
 	// u( getComputedStyle($el).transition.split(/,\s*/).map( s=> s.split(' ') ).filter( a=> a[0] == 'background' ).map( a=> a[1] )[0] ) / u.ms
 	const delay = ()=> 
-					getComputedStyle($el).transition.split(/,\s*/)
-						.map( s=> s.split(' ') )
-						.filter( a=> a[0] == 'background' )
-						.map( a=> a[1] )
-						[0] * 1010
+					parseFloat(
+						getComputedStyle($el).transition.split(/,\s*/)
+							.map( s=> s.split(' ') )
+							.filter( a=> a[0] == 'background' )
+							.map( a=> a[1] )
+							[0]
+					 ) * 1100
 	
 	const fadeBg = ({ bodyBg, bodyBgPosition })=> {
 
