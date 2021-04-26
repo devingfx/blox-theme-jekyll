@@ -116,7 +116,8 @@ const fadeBg = ({ bodyBg, bodyBgPosition })=> {
 	if( $body.hasAttribute('fading') )
 		return nextImage = { bodyBg, bodyBgPosition }
 	
-	let { bodyBg, bodyBgPosition } = nextImage ? nextImage : { bodyBg, bodyBgPosition }
+	bodyBg = nextImage ? nextImage.bodyBg : bodyBg
+	bodyBgPosition = nextImage ? nextImage.bodyBgPosition : bodyBgPosition
 	nextImage = null
 	$body.setAttribute('fading','')
 	$body.style.setProperty('background-image', `url("${bodyBg}")` )
