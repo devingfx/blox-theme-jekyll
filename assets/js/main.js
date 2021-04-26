@@ -123,7 +123,6 @@ const ImageFader = $el=> {
 					.map( n=> n.dataset.bodyBg )
 					.map( src=> (i = new Image, i.src = src, i) )
 	
-	// u( getComputedStyle($el).transition.split(/,\s*/).map( s=> s.split(' ') ).filter( a=> a[0] == 'background' ).map( a=> a[1] )[0] ) / u.ms
 	const delay = ()=> 
 					parseFloat(
 						getComputedStyle($el).transition.split(/,\s*/)
@@ -167,27 +166,16 @@ const ImageFader = $el=> {
 		if( $el.hasAttribute('fading') )
 			return
 		
-		// bodyBg = nextState ? nextState.bodyBg : bodyBg
-		// bodyBgPosition = nextState ? nextState.bodyBgPosition : bodyBgPosition
-		
-		
-		
-		setTimeout( ()=> doFadeBg(), threshold )
+		setTimeout( doFadeBg, threshold )
 	}
 
 	Region( '-70px 100px 0px 100px', 1 )
-		.on('[data-body-bg]', e=> {
-				// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
-			if(e.isIntersecting) {
-				// e.intersectionRatio > 0 && ()
-				fadeNext( e.target.dataset )
-				// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
-				// e.target.dataset.bodyBgPosition
-				// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
-				// 	: $body.style.removeProperty( 'background-position' )
-			}
-		})
-		.helper = true
+		.on('[data-body-bg]', e=> 
+			// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )||
+			e.isIntersecting
+				&& fadeNext( e.target.dataset )
+		)
+		// .helper = true
 
 }
 
