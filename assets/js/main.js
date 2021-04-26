@@ -117,7 +117,10 @@ if( $headerStyle.position == 'sticky' )
 
 const ImageFader = $el=> {
 	
-	let nextImage
+	let nextImage, i
+	,	images = [...document.querySelectorAll(`[data-body-bg]`)]
+					.map( n=> n.dataset.bodyBg )
+					.map( src=> (i = new Image, i.src = src, i) )
 	
 	const fadeBg = ({ bodyBg, bodyBgPosition })=> {
 
@@ -196,17 +199,17 @@ ImageFader( $body )
 // document.body.append( dbgdiv )
 // window.sectionRegion = 
 
-Region( '-70px 100px 0px 100px', 1 ).on('[data-body-bg]', e=> {
-		// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
-	if(e.isIntersecting) {
-		// e.intersectionRatio > 0 && ()
-		fadeBg( e.target.dataset )
-		// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
-		// e.target.dataset.bodyBgPosition
-		// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
-		// 	: $body.style.removeProperty( 'background-position' )
-	}
-})
+// Region( '-70px 100px 0px 100px', 1 ).on('[data-body-bg]', e=> {
+// 		// console.log( e.intersectionRatio, e.target, 'visible:',  e.isVisible, 'Intersecting:',  e.isIntersecting )
+// 	if(e.isIntersecting) {
+// 		// e.intersectionRatio > 0 && ()
+// 		fadeBg( e.target.dataset )
+// 		// $body.style.setProperty('background-image', `url("${e.target.dataset.bodyBg}")` )
+// 		// e.target.dataset.bodyBgPosition
+// 		// 	? $body.style.backgroundPosition = e.target.dataset.bodyBgPosition
+// 		// 	: $body.style.removeProperty( 'background-position' )
+// 	}
+// })
 
 
 // const altCss = new CSSStyleSheet()
