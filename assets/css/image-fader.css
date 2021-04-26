@@ -15,8 +15,7 @@
 	background-attachment: fixed;
 }
 .bg-anim {
-	--anim-duration: var(--anim-duration, 3s);
-	transition: background var(--anim-duration);
+	transition: background var(--bg-anim-duration);
 }
 
 .bg-fixed.bg-fx-layer::after {

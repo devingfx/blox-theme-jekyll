@@ -12,6 +12,7 @@
 	/* --logo-font: "Indie Flower"; */
 	--speach-font: "Comic Neue";
 
+	--bg-anim-duration: 3s;
 	
 	--accent-color:           hsl(36, 100%, 62%);
 	--accent-color-h:         36;
