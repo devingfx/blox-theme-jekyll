@@ -122,6 +122,14 @@ const ImageFader = $el=> {
 					.map( n=> n.dataset.bodyBg )
 					.map( src=> (i = new Image, i.src = src, i) )
 	
+	// u( getComputedStyle($el).transition.split(/,\s*/).map( s=> s.split(' ') ).filter( a=> a[0] == 'background' ).map( a=> a[1] )[0] ) / u.ms
+	const delay = ()=> 
+					getComputedStyle($el).transition.split(/,\s*/)
+						.map( s=> s.split(' ') )
+						.filter( a=> a[0] == 'background' )
+						.map( a=> a[1] )
+						[0] * 1010
+	
 	const fadeBg = ({ bodyBg, bodyBgPosition })=> {
 
 		if( $el.hasAttribute('fading') )
@@ -135,18 +143,19 @@ const ImageFader = $el=> {
 		bodyBgPosition
 			? $el.style.backgroundPosition = bodyBgPosition
 			: $el.style.removeProperty( 'background-position' )
+		setTimeout( ()=>imageFinish(), delay() )
 	}
 
 	const imageFinish = e=> {
-		console.log(e)
+		// console.log(e)
 		$el.removeAttribute('fading')
 		nextImage && fadeBg( nextImage )
 	}
-	on`transitionend`( e=>
-		e.target == $body
-		&& e.propertyName == "background-image"
-			&& imageFinish( e )
-	)
+	// on`transitionend`( e=>
+	// 	e.target == $body
+	// 	&& e.propertyName == "background-image"
+	// 		&& imageFinish( e )
+	// )
 
 	Region( '-70px 100px 0px 100px', 1 )
 		.on('[data-body-bg]', e=> {
