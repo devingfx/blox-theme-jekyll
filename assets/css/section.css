@@ -82,7 +82,7 @@ section .content h4 {
 
 section .content p {
 	font-size: 15px;
-	color: var(--grey-8-color);
+	color: var(--text-color);
 }
 
 section .content ul {

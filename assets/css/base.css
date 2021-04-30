@@ -1,7 +1,7 @@
 
 body {
 	font-family: var(--readable-font), sans-serif;
-	color: var(--grey-8-color);
+	color: var(--text-color);
 }
 
 a {
