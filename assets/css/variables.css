@@ -83,7 +83,7 @@
 
 	--c28-color: #46423b;
 	--link-color:  #433f39;
-	--link-color: var(--grey-5-color);
+	--link-color: var(--grey-2-color);
 	--c7-color:  var(--link-color);
 	--c8-color:  #5f5950;
 	/* --c24-color: #7a7368; */
@@ -119,8 +119,8 @@
 	--card-color: var(--solid-color);
 
 	--c8-color: #fff;
-	--grey-8-color: #e8e7e4;
-	--grey-4-c:olor: #f00;
+/* 	--grey-8-color: #e8e7e4;
+	--grey-4-c:olor: #f00; */
 }
 .theme-dark .content,
 .theme-dark .section-title,

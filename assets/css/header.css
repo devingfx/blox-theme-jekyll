@@ -112,6 +112,7 @@
 	letter-spacing: 1px;
 	transition: 0.3s;
 	white-space: nowrap;
+	/* width: 110px; */
 }
 
 #header .call-to-action:hover {
@@ -121,8 +122,8 @@
 
 @media (max-width: 992px) {
 	#header .call-to-action {
-		margin: 0 15px 0 0;
-		padding: 8px 20px;
-		letter-spacing: 1px;
+		margin: 0 15px;
+		/* padding: 8px 20px; */
+		/* letter-spacing: 1px; */
 	}
 }
