@@ -7,6 +7,12 @@
   
   {%- feed_meta -%}
   
+  
+  {%- if site.devtools -%}
+	<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+	<script>eruda.init();</script>
+  {%- endif -%}
+  
   {%- if site.analytics and jekyll.environment == 'production' and site.analytics.google -%}
     {%- include analytics/google -%}
   {%- endif -%}
