@@ -12,9 +12,11 @@ layout: base
 	{%- for key in page -%}
 		{%- if key[0] == 'title' or key[0] == 'content' or key[0] == 'header' or key[0] == 'footer' or key[0] == 'layout' or key[0] == 'dir' or key[0] == 'name' or key[0] == 'path' or key[0] == 'url' -%}
 			{%- continue -%}
+			{%- comment -%}
 		<!-- { %- elsif key[0] == 'content' -%} marche pas -->
 			<!-- { { page.content | markdownify }} -->
 			<!-- { { content | markdownify }} -->
+			{%- endcomment -%}
 		{%- else -%}
 			{%- assign name = key[0] -%}
 			{%- assign blox = key[1] -%}
@@ -22,6 +24,7 @@ layout: base
 				{%- assign type = key[0] -%}
 				{%- assign data = key[1] -%}
 			{%- endfor -%}
+			{%- comment -%}
 			<!-- { %- capture path -%}_includes/{ {type}}{ %- endcapture -%} -->
 			<!-- <pre>
 				name = { { name }}
@@ -33,9 +36,12 @@ layout: base
 					dont exists
 				{ % endif %} - ->
 			</pre> -->
+			{%- endcomment -%}
 			{% include {{ type }} name=name data=data %}
+			{%- comment -%}
 			<!-- { % include {{ type }} name={{ name }} data=data %} -->
 			<!-- { % include {{ file }} data=data %} -->
+			{%- endcomment -%}
 		{%- endif -%}
 	{%- endfor -%}
 </main>
