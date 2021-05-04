@@ -51,6 +51,8 @@
 	--topbar-height: 50px;
 	--topbar-color: var(--solid-color);
 	--topbar-text-color: rgba(255, 255, 255, 0.7);
+	
+	--header-height: 70px;
 	--header-color: var(--solid-color);
 	--header-effect: none;
 	

@@ -6,7 +6,7 @@
 
 #header {
 	top: var(--topbar-height, 0);
-	height: 70px;
+	height: var(--header-height, 70px);
 	z-index: 997;
 	transition: all 0.5s;
 	padding: 10px 0;

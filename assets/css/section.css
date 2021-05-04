@@ -6,7 +6,14 @@ section {
 }
 section.hero { margin: 0 }
 section:last-child { margin-bottom: 0 }
-
+section:first-child { margin-top: 0 }
+section:first-child { 
+	/* padding-top: var(--header-height); */
+	padding-top: calc( var(--topbar-height) + var(--header-height) );
+}
+.gallery section {
+	margin: 0;
+}
 section .content {
 	background: var(--header-color);
 	padding: 40px 80px;

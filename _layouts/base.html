@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}" class="{{ page.path | replace: '/', '_' | remove: '.md' }} {% if site.data.theme.dark %}theme-dark{%- endif -%}">
+<html lang="{{ page.lang | default: site.lang | default: "en" }}"
+	  class="{{ page.path | replace: '/', '_' | remove: '.md' }} 
+	  {% if site.data.theme.dark %}theme-dark{%- endif -%}">
 
 	{%- include head.html -%}
 

@@ -2,6 +2,7 @@
 body {
 	font-family: var(--readable-font), sans-serif;
 	color: var(--text-color);
+	background: var(--grey-e-color);
 }
 
 a {
