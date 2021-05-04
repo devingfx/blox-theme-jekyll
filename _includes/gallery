@@ -1,5 +1,5 @@
 
-<section id="{{name}}" class="gallery {{name}}">
+<section id="{{name}}" class="gallery {{name}} {{ include.data.class }}">
 	<div class="container-fluid">
 
 		{%- assign subject = site.subjects | where: "relative_path", include.data | first -%}
@@ -14,7 +14,11 @@
 		
 		
 		<div class="row no-gutters">
-		
+			
+			{%- if include.data.mode == 'masonry' -%}
+				<div class="masonry-grid">
+			{%- endif -%}
+			
 			{%- if subject -%}
 				{%- assign photos = subject.photos -%}
 			{%- else -%}
@@ -22,14 +26,17 @@
 			{%- endif -%}
 			
 			{% for photo in photos %}
-			<div class="col-lg-3 col-md-6 mt-4">
-				<div class="gallery-item">
+			<div class="col-lg-3 col-md-6 mt-4 gallery-item">
 				<a href="{{ photo }}" class="gallery-lightbox">
 					<img src="{{ photo }}" alt="" class="img-fluid">
 				</a>
-				</div>
 			</div>
 			{% endfor %}
+
+			
+			{%- if include.data.mode == 'masonry' -%}
+				</div>
+			{%- endif -%}
 
 		</div>
 

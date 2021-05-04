@@ -1,5 +1,4 @@
-
-<section id="{{name}}" class="columns {{name}}">
+<section id="{{name}}" class="columns {{name}} {{ include.data.class }}">
 
 	{%- assign type = 'container' | split: ',' -%}
 	<!-- data {{ include.data }} -->
@@ -10,7 +9,7 @@
 	{%- endif -%}
 	
 	
-	<div class="{{ type | join: '-'}} {{ include.data.class }}">
+	<div class="{{ type | join: '-'}}">
 
 		<div class="row">
 		
