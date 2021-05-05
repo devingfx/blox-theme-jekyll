@@ -48,6 +48,8 @@
 	--text-color: var(--grey-8-color);
 	--solid-color: rgba(26, 24, 22, 0.8);
 
+	--scrolled-offset: 100px;
+	
 	--topbar-height: 50px;
 	--topbar-color: var(--solid-color);
 	--topbar-text-color: rgba(255, 255, 255, 0.7);

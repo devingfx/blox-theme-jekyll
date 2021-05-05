@@ -55,8 +55,10 @@ const scrollto = el=> el &&
 /**
  * Toggle .scrolled class on body when page is scrolled a certain threshold
  */
+const bodyStyle = getComputedStyle($body)
+
 const headerScrolled = e=>
-	$body.classList.toggle( 'scrolled', window.scrollY > 100 )
+	$body.classList.toggle( 'scrolled', window.scrollY > parseFloat(bodyStyle.getPropertyValue('--scrolled-offset')) )
 
 on`scroll`( headerScrolled )
 on`load`( headerScrolled, window )
