@@ -28,17 +28,20 @@
 	
     background: var(--header-color);
     backdrop-filter: var(--header-effect);
+    -webkit-backdrop-filter: var(--header-effect);
     
 	transform: translateY(-120px);
 	
 	transform: scale(2);
     backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     opacity: 0;
 }
 .scrolled #header::before {
     transform: translateY(0px);
 	opacity: 1;
     backdrop-filter: var(--header-effect);
+    -webkit-backdrop-filter: var(--header-effect);
 }
 .scrolled #header {
 	top: 0;
