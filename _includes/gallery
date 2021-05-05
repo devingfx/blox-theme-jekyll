@@ -1,10 +1,8 @@
+{%- assign data = site.subjects | where: "relative_path", include.data | first | default: include.data -%}
 
-<section id="{{name}}" class="gallery {{name}} {{ include.data.class }}">
+<section id="{{name}}" class="gallery {{name}} {{ data.class }}">
 	<div class="container-fluid">
 
-		<!-- { %- assign subject = site.subjects | where: "relative_path", include.data | first -%} -->
-		{%- assign data = site.subjects | where: "relative_path", include.data | first | default: include.data -%}
-		<!-- { { data | inspect }} -->
 		
 		{%- if data.content -%}
 			<div class="section-title">
