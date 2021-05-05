@@ -2,39 +2,33 @@
 <section id="{{name}}" class="gallery {{name}} {{ include.data.class }}">
 	<div class="container-fluid">
 
-		{%- assign subject = site.subjects | where: "relative_path", include.data | first -%}
+		<!-- { %- assign subject = site.subjects | where: "relative_path", include.data | first -%} -->
+		{%- assign data = site.subjects | where: "relative_path", include.data | first | default: include.data -%}
+		<!-- { { data | inspect }} -->
 		
-		<div class="section-title">
-			{%- if subject -%}
-				{{ subject.content }}
-			<!-- { %- else -%} -->
-				<!-- { { include.data | markdownify }} -->
-			{%- endif -%}
-		</div>
+		{%- if data.content -%}
+			<div class="section-title">
+				{{ data.content | markdownify }}
+			</div>
+		{%- endif -%}
 		
 		
 		<div class="row no-gutters">
 			
-			{%- if include.data.mode == 'masonry' -%}
+			{%- if data.mode == 'masonry' -%}
 				<div class="masonry-grid">
 			{%- endif -%}
 			
-			{%- if subject -%}
-				{%- assign photos = subject.photos -%}
-			{%- else -%}
-				{%- assign photos = include.data.photos -%}
-			{%- endif -%}
-			
-			{% for photo in photos %}
+			{% for photo in data.photos %}
 			<div class="col-lg-3 col-md-6 mt-4 gallery-item">
-				<a href="{{ photo }}" class="gallery-lightbox">
+				<a href="{{ data.photo-link | default: photo }}" class="{{ data.photo-class }}">
 					<img src="{{ photo }}" alt="" class="img-fluid">
 				</a>
 			</div>
 			{% endfor %}
 
 			
-			{%- if include.data.mode == 'masonry' -%}
+			{%- if data.mode == 'masonry' -%}
 				</div>
 			{%- endif -%}
 
