@@ -36,7 +36,7 @@
 		    {%- for area in site.data.user.coverAreas -%}
               <div class="col-lg-3 col-md-6 info mt-4 mt-lg-0">
                 <i class="bi bi-geo-alt"></i>
-                <h4>{{ area.name }}:</h4>
+                {% if area.name %}<h4>{{ area.name }}:</h4>{% endif %}
 				{%- for city in area.cities -%}
                   {{ city | markdownify }}
 		    	{%- endfor -%}
