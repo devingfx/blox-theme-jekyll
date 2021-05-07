@@ -4,13 +4,30 @@
     <div class="container">
       <h3>{{ site.title }}</h3>
       <p>{{ site.tagline }}</p>
-      <div class="social-links">
+	  
+	  {% if site.data.user.sameAs %}
+      
+	  <div class="social-links">
+	    {% for id in site.data.user.sameAs %}
+			{%- assign url = id | split: '//' -%}
+			{%- assign path = url[1] | split: '/' -%}
+			{%- assign domain = path[0] | split: '.' -%}
+			{%- assign icons = '' | split: '.' -%}
+			{%- for s in domain -%}
+				{%- capture icon -%}bxl-{{s}}{%- endcapture -%}
+				{%- assign icons = icons | push: icon -%}
+			{%- endfor -%}
+        	<a href="{{ id }}" class="{{ domain | join: ' ' }}"><i class="bx {{ icons | join: ' ' }}"></i></a>
+		{% endfor %}
         <!-- <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a> -->
-        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <!-- <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a> -->
+        <!-- <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a> -->
+        <!-- <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a> -->
       </div>
+	  
+	  {%- endif -%}
+	  
       <div class="copyright">
         &copy; Copyright <strong><span>{{ site.title }}</span></strong>. All Rights Reserved
       </div>
