@@ -25,6 +25,7 @@
     right: 0;
     bottom: 0;
     z-index: -1;
+	pointer-events: none;
 	
     background: var(--header-color);
     backdrop-filter: var(--header-effect);
