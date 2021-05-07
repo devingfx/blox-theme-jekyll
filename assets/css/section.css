@@ -86,23 +86,24 @@ section .content h4 {
 	margin-top: 5px;
 }
 
-section .content p {
+section .content {
 	font-size: 15px;
 	color: var(--text-color);
 }
 
 section .content ul {
-	list-style: none;
+	/* list-style: none; */
 	padding: 0;
 }
 
-section .content ul li + li {
+/* section .content ul li + li {
 	margin-top: 15px;
-}
+} */
 
 section .content ul li {
-	position: relative;
-	padding-left: 26px;
+	/* position: relative; */
+	list-style: square;
+	margin-left: 3em;
 }
 
 section .content ul i {
