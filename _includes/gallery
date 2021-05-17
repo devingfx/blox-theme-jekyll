@@ -3,29 +3,30 @@
 <section id="{{name}}" class="gallery {{name}} {{ data.class }}">
 	<div class="container-fluid">
 
-		
+
 		{%- if data.content -%}
 			<div class="section-title">
 				{{ data.content | markdownify }}
 			</div>
 		{%- endif -%}
-		
-		
+
+
 		<div class="row no-gutters">
-			
+
 			{%- if data.mode == 'masonry' -%}
 				<div class="masonry-grid">
 			{%- endif -%}
-			
+
 			{% for photo in data.photos %}
-			<div class="col-lg-3 col-md-6 mt-4 gallery-item">
-				<a href="{{ data.photo-link | default: photo }}" class="{{ data.photo-class }}">
-					<img src="{{ photo }}" alt="" class="img-fluid">
-				</a>
-			</div>
+				{%- assign photo-title = photo.url | split: '/' | last | split: '-' | join: ' ' | replace: '.jpg', '' -%}
+				<div class="col-lg-3 col-md-6 mt-4 gallery-item">
+					<a href="{{ data.photo-link | default: photo.url }}" class="{{ data.photo-class }}">
+						<img src="{{ photo.url }}" alt="{{ photo.alternateName | default: photo.name  }}" title="{{ photo.title | default: photo.name }}" class="img-fluid">
+					</a>
+				</div>
 			{% endfor %}
 
-			
+
 			{%- if data.mode == 'masonry' -%}
 				</div>
 			{%- endif -%}
