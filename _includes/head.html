@@ -1,26 +1,37 @@
-<head>
+<head env="{{jekyll.environment}}">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
   {%- seo -%}
-  
+  {%- for entity in site.data -%}
+    {%- assign json = entity[1] -%}
+    {%- if json["@context"] and json["@type"] -%}
+      {% include seo/jsonld data = json %}
+    {%- endif -%}
+  {%- endfor -%}
+
   {%- feed_meta -%}
-  
-  
+
+
   {%- if site.devtools -%}
 	<script src="//cdn.jsdelivr.net/npm/eruda"></script>
 	<script>eruda.init();</script>
   {%- endif -%}
-  
-  {%- if site.analytics and jekyll.environment == 'production' and site.analytics.google -%}
-    {%- include analytics/google -%}
+
+  {%- if jekyll.environment == 'production' -%}
+
+    {%- if site.analytics -%}
+      {%- if site.analytics.google -%}
+        {%- include analytics/google -%}
+      {%- endif -%}
+      {%- if site.analytics.matomo -%}
+        {%- include analytics/matomo -%}
+      {%- endif -%}
+    {%- endif -%}
+
   {%- endif -%}
-  {%- if site.analytics and jekyll.environment == 'production' and site.analytics.matomo -%}
-    {%- include analytics/matomo -%}
-  {%- endif -%}
-  
+
 
   {%- include custom-head.html -%}
-  
+
 </head>
