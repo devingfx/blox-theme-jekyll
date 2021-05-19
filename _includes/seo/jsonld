@@ -1,0 +1,3 @@
+{% if include.data %}
+<script type="application/ld+json">{{ include.data | jsonify }}</script>
+{%- endif -%}
